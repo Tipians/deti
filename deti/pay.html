@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart | Big Bites Burger</title>
+    <meta charset="UTF-8">
+    <title>About Us | Big Bites Burger</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!---------stylesheet------------------->
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="pay.css"/>
+<!------------script--------------------->
+<!-------fav-c------->
+<link rel="shortcut icon" href="Pictures/BENEDETTI_WHITE.png"/>
+<!-----using fontawesome-------------------------->
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="Pictures/BENEDETTI_WHITE.png">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product.php">Product</a></li>
+                        <li><a href="AboutUs.html">About Us</a></li>
+                        <li><a href="ContactUs.html">Contact Us</a></li>
+                    </ul>
+                    <!-------------right-menu--------------->
+                        <div class="right-menu">
+                            <a href="javascript:void(0)" class="search">
+                            <i class="fas fa-search"></i>
+                            </a>
+                            <a href="javascript:void(0)" class="user">
+                            <i class="far fa-user"></i>
+                            </a>
+                            <a class="cart" href="cart.html">
+                            <i class="fas fa-shopping-cart">
+								<span class="num-cart-product">0</span>
+                            </i>
+                            </a>
+                     </div>
+                </nav>
+        <!--search-bar----------------------------------->
+            <div class="search-bar">
+        <!--search-input------->
+            <div class="search-input">
+            <!---input---->
+            <input type="text" placeholder="Search For Product" name="search" />
+        <!--cancel-btn--->
+            <a href="" class="search-cancel">
+            <i class="fas fa-times"></i>
+            </a>
+
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <a href="#" id="get_location">Get Location</a>
+    </div>
+    <div>
+        <iframe id="google_map" width="425" height="350" frameborder="0" scrolling="no" marginheight="0" src="https://maps.google.com.ph?outpud=embed"></iframe>
+    </div>
+
+    <script>
+        var c = function(pos) {
+            var lat = pos.coords.latitude,
+                long = pos.coords.longitude,
+                coords = lat + ', ' + long;
+
+            document.getElementById('google_map').setAttribute('src', 'https://maps.google.com.ph/?q=' + coords + '&z=60&output=embed');
+        }
+
+
+        document.getElementById('get_location').onclick = function() {
+            navigator.geolocation.getCurrentPosition(c);
+            return false;
+        }
+    </script>
+
+<!--------------------------------Checkout------------------------->
+
+<div class="row-10">
+  <div class="col-75">
+    <div class="container-10">
+      <form action="/action_page.php">
+
+        <div class="row-10">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="New York">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="NY">
+              </div>
+              <div class="col-50">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip" placeholder="10001">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2018">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <input type="submit" value="Continue to checkout" class="btn">
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-------------footer------------------->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h2>Benedetti Burgers</h2>
+                <h3>Know more:</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                </ul>
+            </div>
+        <div class="footer-col-2">
+          <img src="Pictures/BENEDETTI_WHITE.png">
+          <p></p>
+            </div>
+        <div class="footer-col-3">
+            <h3>Follow us</h3>
+            <ul>
+                    <li><a href="https://www.facebook.com/benedetti.burgers/">Facebook</a></li>
+                    <li><a href="https://twitter.com/benedetti.burgers/">Twitter</a></li>
+                    <li></li><a href="https://www.instagram.com/benedetti.burgers/">Instagram</a></li>
+                </ul>
+             </div>
+            <div class="footer-col-4">
+  <div class="services-box">
+      <i class="fas fa-shipping-fast"></i>
+      <span>Fast Delivery</span>
+      <p>Fast Delivery in Metro Manila</p>
+  </div>
+            </div>
+  <div class="services-box">
+      <i class="fas fa-headphones-alt"></i>
+      <span>Open 24/7</span>
+      <p>We support 24hrs a day</p>
+  </div>
+        </div>
+        <hr>
+        <p class="copyright">Copyright 2024 - Group 2</p>
+    </div>
+</div>
+</body>
+</html>
